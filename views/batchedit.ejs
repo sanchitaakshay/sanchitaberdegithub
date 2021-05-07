@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        function validateform()
+        {
+            var correct_way=/^[A-zA-Z]+$/;
+            var numbers = /^[0-9]+$/;
+            var regEx = /^[a-z][a-z\s]*$/;
+            var bn=document.forms["rform"]["batchname"].value;
+           
+           
+            
+            if(bn==null||bn=="")
+            {
+                alert("First name cannot be blank");
+                return false;
+            }
+            if(bn.match(regEx))
+                true;
+                else{
+                    alert("name must be character only");
+                return false;
+    
+                
+            }
+        }
+            
+        </script>
+    <style>
+        div.container{
+            background-color: black;
+            height: 600px;
+            width: 500px;
+            padding: 20px;
+
+        }
+        label{
+            color: white;
+            font-size: 20px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        span{
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input[type="text"]{
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            height: 30px;
+            width: 200px;
+            margin-left: 50px;
+            
+        }
+
+        </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/batchedit/<%= bat.bid %>" name="rform" method="POST"  onsubmit="return validateform()" >
+            
+                
+            
+            <input type="hidden" value="<%= bat.bid %>" name="bid">
+             <br>
+             <label for="name">Enter batch name:</label>
+             <input type="text" name="batchname" id="batchnamename" placeholder="Enter name Name" value="<%=bat.batchname %>" size="100" required style="margin-left:16px;margin-top: 10px;">
+             <br>
+             <label for="startdate"><b>Start Date:</b></label>
+             <input type="date" name="startdate" size="20" required placeholder="Enter course start Date" value="<%=bat.startdate %>" style="margin-left: 80px;margin-top: 10px; height: 30px; width: 200px;">
+             <br>
+             <label for="date"><b>End Date:</b></label>
+             <input type="date" name="enddate" size="20" required placeholder="Enter course end Date" value="<%=bat.enddate %>" style="margin-left: 90px;margin-top: 10px; height: 30px; width: 200px;">
+             <br>
+             
+    <input type="submit" value="Register" style="margin-left: 160px; height: 50px;margin-top: 30px;width: 100px; background-color:red; font-size: 20px; font-family: 'Times New Roman', Times, serif; color: white;"/>
+             
+            </form>
+            
+            
+    </div>
+</body>
+</html>

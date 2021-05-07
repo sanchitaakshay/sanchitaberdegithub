@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        function validateform()
+        {
+            var correct_way=/^[A-zA-Z]+$/;
+            var regEx = /^[a-z][a-z\s]*$/;
+            var na=document.forms["rform"]["name"].value;
+            var em=document.forms["rform"]["email"].value;
+            var Da=document.forms["rform"]["Date"].value;
+            var ty=document.forms["rform"]["typeac"].value;
+            var ge=document.forms["rform"]["gender"].value;
+            var pn=document.forms["rform"]["panno"].value;
+            var pa=document.forms["rform"]["password"].value;
+            var st=document.forms["rform"]["status"].value;
+            var nat=document.forms["rform"]["nationality"].value;
+            var oc=document.forms["rform"]["Occupation"].value;
+            var fn=document.forms["rform"]["fname"].value;
+            var mn=document.forms["rform"]["mname"].value;
+            
+            if(na==null||na=="")
+            {
+                alert("First name cannot be blank");
+                return false;
+            }
+            if(na.match(regEx))
+                true;
+                else{
+                    alert("name must be character only");
+                return false;
+    
+                
+            }
+            if(fn==null||fn=="")
+            {
+                alert(" please enter father name");
+                return false;
+            }
+            if(fn.match(regEx))
+                true;
+                else{
+                    alert("father name must be character only");
+                return false;
+    
+                
+            }
+            if(mn==null||mn=="")
+            {
+                alert(" please enter mother name");
+                return false;
+            }
+            if(mn.match(regEx))
+                true;
+                else{
+                    alert("mother name must be character only");
+                return false;
+    
+            }
+            if(em==null||em==""){
+                alert(" please enter email id");
+                return false;
+            }
+            if(em.indexOf("@")==-1){
+                alert("please enter valid email-id");
+                return false;
+            }
+            if(em.charAt(em.length-4)!='.') 
+            {
+                alert(" please enter valid email-id");
+                return false;
+                
+            }
+            if(ty=="select")
+            {
+                alert("enter your type of account");
+                return false;
+                
+            }
+            if(na=="select")
+            {
+                alert("enter your nationality");
+                return false;
+                
+            }
+            if(ge=="radio")
+            {
+                alert("select gender");
+                return false;
+                
+            }
+            if(st=="radio")
+            {
+                alert("enter your marital status");
+                return false;
+                
+            }
+            if(pa=='')
+    {
+          alert("enter the password");
+    }
+     
+    
+    if(pa.length < 6 || pa.length > 6)
+    {
+      alert("Password min and max length is 6.");
+    }
+    
+            
+        }
+        </script>
+    <style>
+        div.container{
+            background-color: black;
+            height: 300px;
+            width: 500px;
+            padding: 20px;
+
+        }
+        label{
+            color: white;
+            font-size: 20px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        span{
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input[type="text"]{
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            height: 30px;
+            width: 200px;
+            margin-left: 50px;
+            
+        }
+
+        </style>
+</head>
+<body>
+    <div class="container">
+        <form action="attendancereg" name="rform" method="POST"  onsubmit="return validateform()">
+            
+                
+            <label for="sid" style="color: white;">Enter student id:</label>
+            <input type="text" name="sid" id="sid" placeholder="Enter student id" style="color: black; margin-left: 90px;margin-top: 10px;">
+            <br>
+            <br>
+             
+                    
+                                            <label for="attendancedate"><b>Attendance Date:</b></label>
+                                            <input type="date" name="attendancedate" size="20" required placeholder="Enter course start Date" style="margin-left: 80px;margin-top: 10px; height: 30px; width: 200px;">
+                                            <br>
+                                            
+             <input type="submit" value="Register" style="margin-left: 170px; margin-top: 35px; height: 50px;width: 100px; background-color: red; font-size: 20px; font-family: 'Times New Roman', Times, serif; color: white;">
+            </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student details</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="jquery.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    
+  
+
+</script>
+</head>
+<body>
+    
+    <div class="container">
+       
+        <a href="/testp" class="btn btn-sm btn-primary">Add User</a><br/><br/>
+        <table class="table table-dark table-striped" style="width: 1200px;">
+            <thead>
+                
+                <tr>
+                    <th>Batch id</th>
+                    <th>Batch name</th>
+                    <th>Course start Date</th>
+                    <th>Course end Date</th>
+                    <th>Action</th>
+                    
+                   </tr>
+                   
+                    
+                    </thead>
+                    <tbody>
+<% batch.forEach(function(bat){%>
+    <tr>
+        <td><%=bat.bid %></td>
+        <td><%=bat.batchname %></td>
+        <td><%=bat.startdate%></td>
+        <td><%=bat.enddate %></td>
+        <td>
+        <a href="edit3/<%= bat.bid %>" class="btn btn-sm btn-primary">Edit</a>
+            <a href="/delete/<%= bat.bid %>" class="btn btn-sm btn-danger">Delete</a>
+       
+</td>
+        </tr>
+<%});
+%>
+                        
+                        </tbody>
+                        </table>
+                        
+
+</body>
+</html>

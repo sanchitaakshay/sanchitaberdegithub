@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student details</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="jquery.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    
+  
+
+</script>
+</head>
+<body>
+    
+    <div class="container">
+       
+        <a href="/test1" class="btn btn-sm btn-primary">Add User</a><br/><br/>
+        <table class="table table-dark table-striped" style="width: 1230px;">
+            <thead>
+                
+                <tr>
+                  <th>id</th>
+                    <th>full name</th>
+                    <th>Address</th>
+                    <th>Gender</th>
+                    <th>birthday</th>
+                    <th>Mobile No</th>
+                    <th>Bid</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                   
+                   
+                    
+                    </thead>
+                    <tbody>
+<% student.forEach(function(stud){%>
+    <tr>
+        <td><%=stud.id %></td>
+        <td><%=stud.fullname %></td>
+        <td><%=stud.address %></td>
+        <td><%=stud.gender %></td>
+        <td><%=stud.birthday %></td>
+        <td><%=stud.mobilenum %></td>
+        <td><%=stud.bid %></td>
+        <td><%=stud.email %></td>
+        <td><%=stud.age%></td>
+        <td>
+            <a href="edit2/<%=stud.id %>" class="btn btn-sm btn-primary">Edit</a>
+            <a href="delete/<%=stud.id %>" class="btn btn-sm btn-danger">Delete</a>
+        </td>
+       
+
+        
+       
+
+        </tr>
+<%});
+%>
+                        
+                        </tbody>
+                        </table>
+
+</body>
+</html>

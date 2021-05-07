@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
+    
+    
+    <style>
+        div.container{
+            background-color: black;
+            height: 600px;
+            width: 500px;
+            padding: 20px;
+
+        }
+
+
+
+        .nav{
+        justify-content: center;
+    }
+     div navbar{
+  padding-left:5px;
+  padding-right:5px;
+ padding-top: 40px;
+  background-size: 50px;
+  text-align: center;
+    }
+    
+    div a{
+        color: white;
+        font-size: 18px;
+    height: 60px;
+
+    text-decoration: none;
+font-weight: bold;
+font-family: 'Times New Roman', Times, serif;
+margin-top:5px;
+        
+    }
+    
+    .navbar{
+        background-color:gray;
+        background-size: 80px;
+        height: 60px;
+       
+
+    }
+    
+    
+
+    
+    div a:hover{
+        color:white;
+        background-color: black;
+padding: 10%;
+
+
+        text-decoration: none;
+        
+    }
+    a{
+    background-size: 500%;
+    }
+
+      
+        </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="http://localhost:4000/testf" style="margin-left: 150px; width: 120px;height: 50px; margin-top: -20px; padding: 10px;"><i class="fa fa-home"></i> Home</a>
+        <a href="http://localhost:4000/test1"  style="margin-left: 25px; width: 120px;height: 50px; margin-top: -20px; padding: 10px; "><i class="fa fa-user-friends"></i> Student</a>
+        <a href="http://localhost:4000/testp" style="margin-left: 60px; width: 120px;height: 50px; margin-top: -20px; padding: 10px;"><i class="fa fa-tasks"></i> Batch</a>
+        <a href="http://localhost:4000/testdropdown" style="margin-left: 60px; width: 130px;height: 50px; margin-top: -20px; padding: 10px;"><i class="fa fa-calendar"></i> Attendance</a>
+        <a href="http://localhost:4000/testG" style="margin-left: 60px; width: 120px;height: 50px; margin-top: -20px; padding: 10px;"><i class="fa fa-list"></i> View</a>
+        <a href="http://localhost:4000/teste" style="margin-left: 40px; width: 120px;height: 50px; margin-top: -20px; padding: 10px;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    <div class="container">
+        <form name="rform" method="POST" action="/regupdate1/<%= stud.id %>" onsubmit="return validateform()" >
+            <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+.menu-btn {
+   background-color: #7e32d4;
+   color: white;
+   padding: 16px;
+   font-size: 20px;
+   font-weight: bolder;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   border: none;
+}
+.dropdown-menu {
+   position: relative;
+   display: inline-block;
+   background-color: black;
+}
+.menu-content {
+   display: none;
+   position: absolute;
+   background-color: #017575;
+   min-width: 160px;
+   z-index: 1;
+}
+.links {
+   color: rgb(255, 255, 255);
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   font-size: 18px;
+   font-weight: bold;
+   border-bottom: 1px solid black;
+}
+.links:hover {
+   background-color: rgb(8, 107, 46);
+}
+.dropdown-menu:hover .menu-content {
+   display: block;
+}
+.dropdown-menu:hover .menu-btn {
+   background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+<div class="dropdown-menu" style="float: left;">
+<label for="batch" style="font-size: 25px; color: white; font-family: 'Times New Roman', Times, serif;">Batch Name:</label><button class="menu-btn" style="font-family: 'Times New Roman', Times, serif;">Select Batch Name</button>
+<div class="menu-content" style="right: 0; font-family: 'Times New Roman', Times, serif;">
+<a class="links" href="/fullstackattend">Fullstack</a>
+<a class="links" href="/javaattend">Java</a>
+<a class="links" href="/dotnetattend">Dot net</a>
+</div>
+</div>
+</body>
+</html>
+            
+       
+             
+            </form>
+            
+            
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faculty details</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="jquery.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/.../font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" 
+  crossorigin="anonymous">
+</head>
+<body>
+    <dev class="container">
+        <a href="/testA" class="btn btn-sm btn-primary">Add User</a><br/><br/>
+        <table class="table table-dark table-striped" style="width: 1230px;">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>full name</th>
+                    <th>Mobile No</th>
+                    <th>Birth date</th>
+                    <th>Qualification</th>
+                    <th>Email</th>
+                    <th>password</th>
+                    <th>Action</th>
+                
+                    
+                    </thead>
+                    <tbody>
+<% fac.forEach(function(teacher){%>
+    <tr>
+        <td><%=teacher.id %></td>
+        <td><%=teacher.fullname %></td>
+        <td><%=teacher.mobile %></td>
+        <td><%=teacher.birthdate %></td>
+        <td><%=teacher.Qualification %></td>
+        <td><%=teacher.email %></td>
+        <td><%=teacher.password %></td>
+        <td>
+            
+        <a href="edit1/<%= teacher.id %>" class="btn btn-sm btn-primary">Edit</a>
+        <a href="delete/<%= teacher.id %>" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+           
+
+    
+       
+
+        </tr>
+<%});
+%>
+                        
+                        </tbody>
+                        </table>
+
+</body>
+</html>

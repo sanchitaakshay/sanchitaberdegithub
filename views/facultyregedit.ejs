@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        function validateform()
+        {
+            var correct_way=/^[A-zA-Z]+$/;
+            var regEx = /^[a-z][a-z\s]*$/;
+            var na=document.forms["rform"]["name"].value;
+            var mn=document.forms["rform"]["mobno"].value;
+            var Da=document.forms["rform"]["Date"].value;
+            var qu=document.forms["rform"]["qualification"].value;
+            var em=document.forms["rform"]["email"].value;
+            var pa=document.forms["rform"]["password"].value;
+           
+            
+            if(na==null||na=="")
+            {
+                alert("First name cannot be blank");
+                return false;
+            }
+            if(na.match(regEx))
+                true;
+                else{
+                    alert("name must be character only");
+                return false;
+    
+                
+
+            }
+            if(qu==null||qu=="")
+            {
+                alert("Qualification cannot be blank");
+                return false;
+            }
+            
+
+
+
+            if(mn==null||mn=="")
+        {
+            alert(" please enter mobile number");
+            return false;
+        }
+        if(isNaN(mn)){
+            alert(" please enter mobile number in digit");
+            return false;
+        }
+        if(mn.length!=10){
+            alert(" mobile number must be 10 digit only");
+            return false;
+        }
+            
+            if(em==null||em==""){
+                alert(" please enter email id");
+                return false;
+            }
+            if(em.indexOf("@")==-1){
+                alert("please enter valid email-id");
+                return false;
+            }
+            if(em.charAt(em.length-4)!='.') 
+            {
+                alert(" please enter valid email-id");
+                return false;
+                
+            }
+            
+            if(pa=='')
+    {
+          alert("enter the password");
+    }
+     
+    
+    if(pa.length < 6 || pa.length > 6)
+    {
+      alert("Password min and max length is 6.");
+    }
+    
+            
+        }
+        </script>
+    <style>
+        div.container{
+            background-color:black;
+            height: 600px;
+            width: 500px;
+            padding: 20px;
+
+        }
+        label{
+            color: white;
+            font-size: 20px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        span{
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input[type="text"]{
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            height: 30px;
+            width: 200px;
+            margin-left: 50px;
+            
+        }
+
+        </style>
+</head>
+<body>
+    <div class="container">
+        <form name="rform" method="POST" action="/facupdate/<%= teacher.id %>" onsubmit="return validateform()">
+            
+                
+            <input type="hidden" value="<%= teacher.id %>" name="id">
+             <label for="name">Enter full name:</label>
+             <input type="text" name="name" id="name" placeholder="Enter full Name" value="<%=teacher.fullname %>" size="100" required style="margin-left:37px;margin-top: 10px;">
+             <br>
+             <label>Enter Mobile no:</label>
+        <input type="text" name="mobno" placeholder="Enter Mobile No " value="<%=teacher.mobile %>" required style="margin-left: 32px;margin-top: 10px;">
+        <br>
+             <label for="date"><b>Birth Date:</b></label>
+            <input type="date" name="Date" size="20" required placeholder="Enter Birth Date" value="<%=teacher.birthdate %>" style="margin-left: 80px;margin-top: 10px; height: 30px; width: 200px;">
+            <br>
+                          
+            <b><span style="color: white;">Enter Qualification:</span></b>
+            <input type="text" name="qualification" required placeholder="Qualification" value="<%=teacher.Qualification %>" style="margin-left: 5px;margin-top: 10px;">
+            <br>
+            <label for="Occupation">Enter your Email:</label>
+            <input type="text" name="email" id="email" required placeholder="Enter Your Email" value="<%=teacher.email %>" style="margin-left: 20px;margin-top: 10px;">
+            <br>
+            <b><span style="color: white;">Enter password:</span></b>
+    <input type="password" name="password" required placeholder="Enter Password" value="<%=teacher.password %>" style="margin-left: 35px; margin-top: 10px;height: 30px;width: 200px;">
+    <br>
+           
+             <input type="submit" value="Update" style="margin-left: 150px; height: 50px;margin-top: 30px;width: 100px; background-color: red; font-size: 20px; font-family: 'Times New Roman', Times, serif; color: white;"/>
+             
+            </form>
+            <input type="submit" value="Back" style="margin-left: 150px; height: 50px;margin-top: 30px;width: 100px; background-color: red; font-size: 20px; font-family: 'Times New Roman', Times, serif; color: white;"/>
+            
+    </div>
+</body>
+</html>

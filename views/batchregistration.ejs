@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
+    <script>
+        function validateform()
+        {
+            var correct_way=/^[A-zA-Z]+$/;
+            var numbers = /^[0-9]+$/;
+            var regEx = /^[a-z][a-z\s]*$/;
+            var bn=document.forms["rform"]["batchname"].value;
+           
+           
+            
+            if(bn==null||bn=="")
+            {
+                alert("First name cannot be blank");
+                return false;
+            }
+            if(bn.match(regEx))
+                true;
+                else{
+                    alert("name must be character only");
+                return false;
+    
+                
+            }
+        }
+            
+        </script>
+    <style>
+        div.container{
+            background-color: black;
+            height: 600px;
+            width: 500px;
+            padding: 20px;
+
+        }
+        label{
+            color: white;
+            font-size: 20px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        span{
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input[type="text"]{
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            height: 30px;
+            width: 200px;
+            margin-left: 50px;
+            
+        }
+        /* navbar style*/
+
+        .nav{
+        justify-content: center;
+    }
+     div navbar{
+  padding-left:5px;
+  padding-right:5px;
+ padding-top: 40px;
+  background-size: 50px;
+  text-align: center;
+    }
+    
+    div a{
+        color: white;
+        font-size: 18px;
+    height: 60px;
+
+    text-decoration: none;
+font-weight: bold;
+font-family: 'Times New Roman', Times, serif;
+margin-top:5px;
+        
+    }
+    
+    .navbar{
+        background-color:gray;
+        background-size: 80px;
+        height: 60px;
+       
+
+    }
+    
+    div{
+        height: 0px;
+    }
+
+    
+    div a:hover{
+        color:white;
+        background-color: black;
+height: 0px;
+width: 25px;
+padding: 25px;
+
+        text-decoration: none;
+        
+    }
+    a{
+    background-size: 500%;
+    }
+
+        </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="http://localhost:4000/testf" style="margin-left: 120px; width: 120px;height: 50px; margin-top: -20px; padding: 20px;"><i class="fa fa-home"></i> Home</a>
+        <a href="http://localhost:4000/test1"  style="margin-left: 60px; width: 120px;height: 50px; margin-top: -20px; padding: 20px; "><i class="fa fa-user-friends"></i> Student</a>
+        <a href="http://localhost:4000/testp" style="margin-left: 90px; width: 120px;height: 50px; margin-top: -20px; padding: 20px;"><i class="fa fa-tasks"></i> Batch</a>
+        <a href="http://localhost:4000/testdropdown" style="margin-left: 90px; width: 130px;height: 50px; margin-top: -20px; padding: 20px;"><i class="fa fa-calendar"></i> Attendance</a>
+        <a href="http://localhost:4000/testG" style="margin-left: 90px; width: 120px;height: 50px; margin-top: -20px; padding: 20px;"><i class="fa fa-list"></i> View</a>
+        <a href="http://localhost:4000/teste" style="margin-left: 70px; width: 120px;height: 50px; margin-top: -20px; padding: 20px;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    <div class="container">
+        <form action="batchreg" name="rform" method="POST"  onsubmit="return validateform()" >
+            
+                
+            <label for="bid" style="color: white;">Enter batch id:</label>
+             <input type="text" name="bid" id="bid" placeholder="Enter batch Id" style="color: black; margin-left: 45px;margin-top: 10px;">
+             <br>
+             <label for="name">Enter batch name:</label>
+             <input type="text" name="batchname" id="batchnamename" placeholder="Enter name Name" size="100" required style="margin-left:16px;margin-top: 10px;">
+             <br>
+             <label for="startdate"><b>Start Date:</b></label>
+             <input type="date" name="startdate" size="20" required placeholder="Enter course start Date" style="margin-left: 80px;margin-top: 10px; height: 30px; width: 200px;">
+             <br>
+             <label for="date"><b>End Date:</b></label>
+             <input type="date" name="enddate" size="20" required placeholder="Enter course end Date" style="margin-left: 90px;margin-top: 10px; height: 30px; width: 200px;">
+             <br>
+             
+    <input type="submit" value="Register" style="margin-left: 160px; height: 50px;margin-top: 30px;width: 100px; background-color:red; font-size: 20px; font-family: 'Times New Roman', Times, serif; color: white;"/>
+             
+            </form>
+            
+            
+    </div>
+</body>
+</html>

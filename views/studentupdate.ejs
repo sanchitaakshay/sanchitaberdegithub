@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script>
+        function validateform()
+        {
+            var correct_way=/^[A-zA-Z]+$/;
+            var numbers = /^[0-9]+$/;
+            var regEx = /^[a-z][a-z\s]*$/;
+            var na=document.forms["rform"]["name"].value;
+            var ad=document.forms["rform"]["address"].value;
+            var mn=document.forms["rform"]["mobno"].value;
+            var Da=document.forms["rform"]["Date"].value;
+            var bi=document.forms["rform"]["bid"].value;
+            var em=document.forms["rform"]["email"].value;
+            var ag=document.forms["rform"]["age"].value;
+           
+            
+            if(na==null||na=="")
+            {
+                alert("First name cannot be blank");
+                return false;
+            }
+            if(na.match(regEx))
+                true;
+                else{
+                    alert("name must be character only");
+                return false;
+    
+                
+            }
+
+            if(ad==null||ad=="")
+            {
+                alert("First address cannot be blank");
+                return false;
+            }
+            if(ad.match(regEx))
+                true;
+                else{
+                    alert("address must be character only");
+                return false;
+    
+                
+            }
+            if(bi==null||bi=="")
+            {
+                alert(" Batch id cannot be blank");
+                return false;
+            }
+            if(bi.match(numbers))
+                true;
+                else{
+                    alert("Batchid must be number only");
+                return false;
+    
+                
+            }
+            if(ag==null||ag=="")
+            {
+                alert(" Age cannot be blank");
+                return false;
+            }
+            if(ag.match(numbers))
+                true;
+                else{
+                    alert("Age must be number only");
+                return false;
+    
+                
+            }
+            
+    
+                
+            
+            
+            if(em==null||em==""){
+                alert(" please enter email id");
+                return false;
+            }
+            if(em.indexOf("@")==-1){
+                alert("please enter valid email-id");
+                return false;
+            }
+            if(em.charAt(em.length-4)!='.') 
+            {
+                alert(" please enter valid email-id");
+                return false;
+                
+            }
+            
+           
+            
+    if(mn==null||mn=="")
+        {
+            alert(" please enter mobile number");
+            return false;
+        }
+        if(isNaN(mn)){
+            alert(" please enter mobile number in digit");
+            return false;
+        }
+        if(mn.length!=10){
+            alert(" mobile number must be 10 digit only");
+            return false;
+        }
+    
+            
+        }
+        </script>
+    <style>
+        div.container{
+            background-color: black;
+            height: 600px;
+            width: 500px;
+            padding: 20px;
+
+        }
+        label{
+            color: white;
+            font-size: 20px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        span{
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input[type="text"]{
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            height: 30px;
+            width: 200px;
+            margin-left: 50px;
+            
+        }
+
+        </style>
+</head>
+<body>
+    <div class="container">
+        <form action="regupdate1/<%= stud.id %>" name="rform" method="POST"  onsubmit="return validateform()" >
+            
+                
+            
+            <input type="hidden" value="<%= stud.id %>" name="id">
+             <br>
+             <label for="name">Enter student full name:</label>
+             <input type="text" name="name" id="name" placeholder="Enter full Name" value="<%=stud.fullname %>" size="100" required style="margin-left:16px;margin-top: 10px;">
+             <br>
+             <label for="name">Enter student address:</label>
+             <input type="text" name="address" id="address" placeholder="Enter address" value="<%=stud.address %>" size="100" required style="margin-left:30px;margin-top: 10px;">
+             <br>
+             <label for="gender">Select student Gender:</label>
+             <b style="color: white; margin-left: 45px; font-size: 18px; font-family: 'Times New Roman', Times, serif;">Male</b><input type="radio" name="gender" value="<%=stud.gender %>" required color="white"><b style="color: white;font-size: 18px; font-family: 'Times New Roman', Times, serif;">Female</b><input type="radio" name="gender" value="<%=stud.gender %>" required>
+                                 <br>
+
+             
+             <label for="date"><b>Birth Date:</b></label>
+            <input type="date" name="Date" size="20" required placeholder="Enter Birth Date" value="<%=stud.birthday %>" style="margin-left: 125px;margin-top: 10px; height: 30px; width: 200px;">
+            <br>
+            <label>Enter Mobile no:</label>
+        <input type="text" name="mobno" placeholder="Enter Mobile No " value="<%=stud.mobilenum %>" required style="margin-left: 76px;margin-top: 10px;">
+        <br>
+        <label for="id" style="color: white;">Enter student bid:</label>
+             <input type="text" name="bid" id="bid" placeholder="Enter student bid" value="<%=stud.bid %>" style="color: black; margin-left: 65px;margin-top: 10px;">
+             <br>
+             <label for="Email">Enter student Email:</label>
+            <input type="text" name="email" id="email" required placeholder="Enter student Email" value="<%=stud.email %>" style="margin-left: 40px;margin-top: 10px;">
+            <br>
+
+                          
+           
+            <label for="age">Enter student age:</label>
+            <input type="text" name="age" id="age" required placeholder="Enter student age" value="<%=stud.age %>" style="margin-left: 62px;margin-top: 10px;">
+            <br>
+           
+             <a href="http://localhost:14000/test4"><input type="submit" value="Register" style="margin-left: 150px; height: 50px;margin-top: 30px;width: 100px; background-color:red; font-size: 20px; font-family: 'Times New Roman', Times, serif; color: white;"/>
+             
+            </form>
+            
+            
+    </div>
+</body>
+</html>
